@@ -9,8 +9,10 @@ Build Machine Requirements
 
 To be able to build this program, you need to have installed:
 * Java JDK
-* ANT Build system (if we decide to use that)
+* ANT Build system
 
+*How to build*
+Run the _ant_ tool
 
 Running the game
 ================
