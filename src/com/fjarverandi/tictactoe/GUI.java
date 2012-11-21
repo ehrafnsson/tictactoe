@@ -1,11 +1,7 @@
 package com.fjarverandi.tictactoe;
 
-import sun.tools.tree.ThisExpression;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class GUI extends JFrame
 {
@@ -40,7 +36,7 @@ public class GUI extends JFrame
 
         this.setTitle("TicTacToe!");
         this.setSize(600,600);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 
@@ -70,9 +66,9 @@ public class GUI extends JFrame
     {
         ie.NewGame();
 
-        for(int i = 0; i < panels.length; i++)
+        for (TicTacToePanel p : panels)
         {
-            panels[i].refresh();
+           p.refresh();
         }
     }
 
