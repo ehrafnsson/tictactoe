@@ -1,5 +1,7 @@
 package com.fjarverandi.tictactoe;
 
+import sun.tools.tree.ThisExpression;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -24,6 +26,18 @@ public class GUI extends JFrame
             this.add(panels[i]);
         }
 
+        JMenuBar menuBar = new JMenuBar();
+        this.setJMenuBar(menuBar);
+
+        JMenu fileMenu = new JMenu("File");
+        fileMenu.add(new JMenuItem("New Game"));
+        fileMenu.add(new JMenuItem("Quit"));
+        menuBar.add(fileMenu);
+
+        //JMenu editMenu = new JMenu("Edit");
+        // items go here
+        //menuBar.add(editMenu);
+
         this.setTitle("TicTacToe!");
         this.setSize(600,600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,7 +46,6 @@ public class GUI extends JFrame
 
     public void StateChanged()
     {
-
         switch(ie.CheckVictory())
         {
             case 0:
