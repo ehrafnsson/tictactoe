@@ -71,7 +71,7 @@ public class TddGameEngineTest {
 
     // horizontal, Player 2
         //reset
-        _engine = new TddGameEngine();
+        _engine = GetEngine();
 
         testCheckVictory_Helper(_engine, new Point(0,0), (byte)0);
         testCheckVictory_Helper(_engine, new Point(0,1), (byte)0);
@@ -84,7 +84,7 @@ public class TddGameEngineTest {
 
     // diagonal
         //reset
-        _engine = new TddGameEngine();
+        _engine = GetEngine();
 
         testCheckVictory_Helper(_engine, new Point(0,0), (byte)0);
         testCheckVictory_Helper(_engine, new Point(1,0), (byte)0);
@@ -96,7 +96,7 @@ public class TddGameEngineTest {
 
 // test draw
         //reset
-        _engine = new TddGameEngine();
+        _engine = GetEngine();
 
         testCheckVictory_Helper(_engine, new Point(0,0), (byte)0);
         testCheckVictory_Helper(_engine, new Point(1,0), (byte)0);
