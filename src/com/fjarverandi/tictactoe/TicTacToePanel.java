@@ -11,7 +11,7 @@ import java.awt.event.MouseListener;
 public class TicTacToePanel extends JPanel
 {
 	private static final long serialVersionUID = 1L;
-
+	
 	final String[] PlayerText = { "", "X", "O" };
     private JLabel label;
     private Point point;

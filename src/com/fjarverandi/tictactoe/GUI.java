@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame
 {
 	private static final long serialVersionUID = 1L;
-
+	
 	private iEngine ie;
     private TicTacToePanel[] panels;
 

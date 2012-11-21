@@ -13,11 +13,11 @@ public class GameEngine implements iEngine {
 	 * 1 = player one (X)
 	 * 2 = player two (O)
 	 */
-	private byte[][] board = { {0, 0, 0},
-							   {0, 0, 0},
+	private byte[][] board = { {0, 0, 0}, 
+							   {0, 0, 0}, 
 							   {0, 0, 0}
 							 };
-
+	
     public boolean Set (Point point)
     {
     	if (board[point.x][point.y] == 0)
@@ -46,7 +46,7 @@ public class GameEngine implements iEngine {
     	else if (board[2][0] == 1 && board[2][1] == 1 && board[2][2] == 1) return 1;
     	else if (board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 1) return 1;
     	else if (board[2][0] == 1 && board[1][1] == 1 && board[0][2] == 1) return 1;
-
+    	
     	// Check if player two has won
     	if 		(board[0][0] == 2 && board[1][0] == 2 && board[2][0] == 2) return 2;
     	else if (board[0][1] == 2 && board[1][1] == 2 && board[2][1] == 2) return 2;
@@ -56,7 +56,7 @@ public class GameEngine implements iEngine {
     	else if (board[2][0] == 2 && board[2][1] == 2 && board[2][2] == 2) return 2;
     	else if (board[0][0] == 2 && board[1][1] == 2 && board[2][2] == 2) return 2;
     	else if (board[2][0] == 2 && board[1][1] == 2 && board[0][2] == 2) return 2;
-
+    	
     	// If someone is empty then the game is still ON!
     	for (int y = 0; y < 3; y++)
     	{
@@ -65,7 +65,7 @@ public class GameEngine implements iEngine {
     			if (board[y][x] == 0) return 0;
     		}
     	}
-
+    	
     	// If all spot is full and nether of the players has won then it's a draw!
     	return 3;
     }
