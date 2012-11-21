@@ -2,6 +2,8 @@ package com.fjarverandi.tictactoe;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI extends JFrame
 {
@@ -26,16 +28,32 @@ public class GUI extends JFrame
         this.setJMenuBar(menuBar);
 
         JMenu fileMenu = new JMenu("File");
-        fileMenu.add(new JMenuItem("New Game"));
-        fileMenu.add(new JMenuItem("Quit"));
+        JMenuItem newAction = new JMenuItem("New Game");
+        JMenuItem quitAction = new JMenuItem("Quit");
+        fileMenu.add(newAction);
+        fileMenu.add(quitAction);
         menuBar.add(fileMenu);
+
+        newAction.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                NewGame();
+            }
+        });
+
+        quitAction.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                QuitGame();
+            }
+        });
 
         //JMenu editMenu = new JMenu("Edit");
         // items go here
         //menuBar.add(editMenu);
 
         this.setTitle("TicTacToe!");
-        this.setSize(600,600);
+        this.setSize(600, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
@@ -69,6 +87,14 @@ public class GUI extends JFrame
         for (TicTacToePanel p : panels)
         {
            p.refresh();
+        }
+    }
+
+    public void QuitGame()
+    {
+        if (JOptionPane.showConfirmDialog(this, "Are you sure you want to QuitGame?") == 0)
+        {
+            this.dispose();
         }
     }
 
