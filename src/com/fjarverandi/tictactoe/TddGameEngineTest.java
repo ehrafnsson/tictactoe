@@ -62,12 +62,12 @@ public class TddGameEngineTest {
 
     // vertical, Player 1
         testCheckVictory_Helper(_engine, new Point(0,0), (byte)0);
-        testCheckVictory_Helper(_engine, new Point(1, 0), (byte) 0);
+        testCheckVictory_Helper(_engine, new Point(1,0), (byte) 0);
 
         testCheckVictory_Helper(_engine, new Point(0,1), (byte)0);
         testCheckVictory_Helper(_engine, new Point(1,1), (byte)0);
 
-        testCheckVictory_Helper(_engine, new Point(0,1), (byte)1);
+        testCheckVictory_Helper(_engine, new Point(0,2), (byte)1);
 
     // horizontal, Player 2
         //reset
