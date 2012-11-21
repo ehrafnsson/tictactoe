@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
 
 public class GUI extends JFrame
 {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 	
-	private iEngine ie;
+    private iEngine ie;
     private TicTacToePanel[] panels;
 
     public GUI(iEngine ie)
@@ -30,8 +30,14 @@ public class GUI extends JFrame
         this.setJMenuBar(menuBar);
 
         JMenu fileMenu = new JMenu("File");
+        fileMenu.setMnemonic('f');
+
         JMenuItem newAction = new JMenuItem("New Game");
+        newAction.setMnemonic('n');
+
         JMenuItem quitAction = new JMenuItem("Quit");
+        quitAction.setMnemonic('q');
+
         fileMenu.add(newAction);
         fileMenu.add(quitAction);
         menuBar.add(fileMenu);
@@ -62,18 +68,23 @@ public class GUI extends JFrame
 
     public void StateChanged()
     {
-        switch(ie.CheckVictory())
+        byte vicCheck = ie.CheckVictory();
+
+        switch(vicCheck)
         {
             case 0:
                 this.setTitle("TicTacToe! - Player " + ie.PlayerTurn() + "'s turn" );
                 return;
             case 1:
+                this.setTitle("TicTacToe! - Player 1 won!" );
                 JOptionPane.showMessageDialog(this,"Player 1 won!");
                 break;
             case 2:
+                this.setTitle("TicTacToe! - Player 2 won!" );
                 JOptionPane.showMessageDialog(this,"Player 2 won!");
                 break;
             case 3:
+                this.setTitle("TicTacToe! - Game ended with a draw!" );
                 JOptionPane.showMessageDialog(this,"This game ended with a draw!");
                 break;
         }
@@ -85,6 +96,7 @@ public class GUI extends JFrame
     public void NewGame()
     {
         ie.NewGame();
+        this.setTitle("TicTacToe! - Player 1's turn" );
 
         for (TicTacToePanel p : panels)
         {
