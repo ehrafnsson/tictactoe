@@ -20,10 +20,12 @@ public class GameEngine implements iEngine {
 	
     public boolean Set (Point point)
     {
-    	if (board[point.x][point.y] == 0)
+        if (point.x<0 || point.x>2 || point.y<0 || point.y>2) {
+            return(false);
+        } else if (board[point.x][point.y] == 0)
     	{
     		board[point.x][point.y] = (byte) (playerOneTurn ? 1 : 2);
-    		playerOneTurn = (playerOneTurn ? false : true);
+    		playerOneTurn = !playerOneTurn;
     		return true;
     	}
     	else
