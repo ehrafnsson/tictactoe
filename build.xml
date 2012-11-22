@@ -11,6 +11,6 @@
       <mkdir dir="${outputDir}" />
    </target>
    <target name="compile" depends="prepare">
-     <javac includeantruntime="false" srcdir="${sourceDir}" destdir="${outputDir}" />
+     <javac includeantruntime="false" classpath="lib/junit-4.10.jar" srcdir="${sourceDir}" destdir="${outputDir}" />
    </target>
 </project>
