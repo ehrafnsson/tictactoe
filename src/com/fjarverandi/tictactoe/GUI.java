@@ -56,6 +56,24 @@ public class GUI extends JFrame
             }
         });
 
+        JMenu helpMenu = new JMenu("Help");
+        helpMenu.setMnemonic('h');
+
+        JMenuItem aboutAction = new JMenuItem("About");
+        aboutAction.setMnemonic('a');
+        helpMenu.add(aboutAction);
+
+        aboutAction.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String version = "TicTacToe version " + TicTacToe.class.getPackage().getImplementationVersion();
+                version += "\nby Team Fjarverandi";
+                JOptionPane.showMessageDialog(null,version);
+            }
+        });
+
+        menuBar.add(helpMenu);
+
         //JMenu editMenu = new JMenu("Edit");
         // items go here
         //menuBar.add(editMenu);
