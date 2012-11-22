@@ -2,15 +2,18 @@
    <target name="init">
       <property name="sourceDir" value="src" />
       <property name="outputDir" value="classes" />
+      <property name="deployDir" value="deploy" />
       <property name="includeantruntime" value="false" />
    </target>
 
    <target name="clean" depends="init">
       <delete dir="${outputDir}" />
+      <delete dir="${deployDir}" />
    </target>
 
    <target name="prepare" depends="clean">
       <mkdir dir="${outputDir}" />
+      <mkdir dir="${deployDir}" />
    </target>
 
    <target name="compile" depends="prepare">
@@ -18,7 +21,7 @@
    </target>
 
    <target name="jar" depends="compile">
-       <delete file="tictactoe.jar"/>
+       <delete file="${deployDir}tictactoe.jar"/>
        <delete file="MANIFEST.MF"/>
 
        <property name="version.num" value="1.0"/>
@@ -36,7 +39,7 @@
                       value="${version.num}-b${build.number}"/>
        </manifest>
 
-       <jar destfile="tictactoe.jar" manifest="MANIFEST.MF" basedir="classes" includes="**/*.class, lib" />
+       <jar destfile="${deployDir}/tictactoe.jar" manifest="MANIFEST.MF" basedir="classes" includes="**/*.class, lib" />
    </target>
 
    <target name="cleanup">
