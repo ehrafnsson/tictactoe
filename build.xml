@@ -3,6 +3,7 @@
       <property name="sourceDir" value="src" />
       <property name="outputDir" value="classes" />
       <property name="deployDir" value="deploy" />
+      <property name="libDir" value="lib" />
       <property name="includeantruntime" value="false" />
    </target>
 
@@ -22,16 +23,16 @@
   
   <target name="unit-tests" >
 
-  <junit printsummary="yes" haltonfailure="yes">
+  <junit printsummary="on" haltonfailure="on">
 
     <classpath>
-      <pathelement location="${outputDir}"/>
+      <pathelement location="${libDir}"/>
       <pathelement location="${outputDir}"/>
       <pathelement path="${sourceDir}"/>
     </classpath>
 
     <test name="com.fjarverandi.tictactoe.TddGameEngineTest"
-             haltonfailure="yes" outfile="result">
+             haltonfailure="on" outfile="result">
 
       <formatter type="plain"/>
       <formatter type="xml"/>
