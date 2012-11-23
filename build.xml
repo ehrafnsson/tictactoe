@@ -21,7 +21,7 @@
      <javac includeantruntime="false" classpath="lib/junit-4.10.jar" srcdir="${sourceDir}" destdir="${outputDir}" />
    </target>
   
-  <target name="unit-tests" >
+  <target name="unit-tests" depends="compile" >
 
   <junit printsummary="on" haltonfailure="on">
 
@@ -42,7 +42,7 @@
   </junit>
 </target>
 
-   <target name="jar" depends="compile">
+   <target name="jar" depends="unit-tests">
        <delete file="${deployDir}tictactoe.jar"/>
        <delete file="MANIFEST.MF"/>
 
