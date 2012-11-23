@@ -7,6 +7,14 @@
       <property name="includeantruntime" value="false" />
    </target>
 
+  <path id="classpath.base">
+  </path>
+  <path id="classpath.test">
+    <pathelement location="lib/junit-4.10.jar"/>
+    <pathelement path="${sourceDir}"/>
+    <path refid="classpath.base" />
+  </path>
+
    <target name="clean" depends="init">
       <delete dir="${outputDir}" />
       <delete dir="${deployDir}" />
@@ -18,19 +26,18 @@
    </target>
 
    <target name="compile" depends="prepare">
-     <javac includeantruntime="false" classpath="lib/junit-4.10.jar" srcdir="${sourceDir}" destdir="${outputDir}" />
+     <javac includeantruntime="false" srcdir="${sourceDir}" destdir="${outputDir}">
+       <classpath refid="classpath.test" />
+     </javac>
    </target>
   
   <target name="unit-tests" depends="compile" >
 
   <junit printsummary="on" haltonfailure="on">
-
     <classpath>
-      <pathelement location="${libDir}"/>
-      <pathelement location="${outputDir}"/>
-      <pathelement path="${sourceDir}"/>
+      <pathelement location="${outputDir}" />
+      <path refid="classpath.test" />
     </classpath>
-
     <test name="com.fjarverandi.tictactoe.TddGameEngineTest"
              haltonfailure="on">
 
