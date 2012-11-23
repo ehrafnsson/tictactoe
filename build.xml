@@ -19,6 +19,27 @@
    <target name="compile" depends="prepare">
      <javac includeantruntime="false" classpath="lib/junit-4.10.jar" srcdir="${sourceDir}" destdir="${outputDir}" />
    </target>
+  
+  <target name="unit-tests" >
+
+  <junit printsummary="yes" haltonfailure="yes">
+
+    <classpath>
+      <pathelement location="${outputDir}"/>
+      <pathelement location="${outputDir}"/>
+      <pathelement path="${sourceDir}"/>
+    </classpath>
+
+    <test name="com.fjarverandi.tictactoe.TddGameEngineTest"
+             haltonfailure="yes" outfile="result">
+
+      <formatter type="plain"/>
+      <formatter type="xml"/>
+
+    </test>
+
+  </junit>
+</target>
 
    <target name="jar" depends="compile">
        <delete file="${deployDir}tictactoe.jar"/>
