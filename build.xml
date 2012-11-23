@@ -32,7 +32,7 @@
     </classpath>
 
     <test name="com.fjarverandi.tictactoe.TddGameEngineTest"
-             haltonfailure="on" outfile="result">
+             haltonfailure="on">
 
       <formatter type="plain"/>
       <formatter type="xml"/>
