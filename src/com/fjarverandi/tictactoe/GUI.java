@@ -78,10 +78,10 @@ public class GUI extends JFrame
         // items go here
         //menuBar.add(editMenu);
 
-        this.setTitle("TicTacToe!");
         this.setSize(600, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
+        NewGame();
     }
 
     public void StateChanged()
