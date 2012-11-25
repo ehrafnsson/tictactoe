@@ -6,7 +6,7 @@ import java.awt.*;
 
 import static org.junit.Assert.*;
 
-public class TddGameEngineTest {
+public class GameEngineTest {
     private iEngine GetEngine(){
         return(new GameEngine());
     }
