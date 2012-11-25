@@ -74,10 +74,6 @@ public class GUI extends JFrame
 
         menuBar.add(helpMenu);
 
-        //JMenu editMenu = new JMenu("Edit");
-        // items go here
-        //menuBar.add(editMenu);
-
         this.setSize(600, 600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);

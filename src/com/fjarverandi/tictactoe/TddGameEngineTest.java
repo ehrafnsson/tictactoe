@@ -1,13 +1,13 @@
 package com.fjarverandi.tictactoe;
 
-import java.awt.Point;
-
 import org.junit.Test;
+
+import java.awt.*;
+
 import static org.junit.Assert.*;
 
 public class TddGameEngineTest {
     private iEngine GetEngine(){
-        //return(new TddGameEngine());
         return(new GameEngine());
     }
 
