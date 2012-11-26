@@ -8,12 +8,16 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame
 {
     private static final long serialVersionUID = 1L;
-	
-    private iEngine ie;
-    private TicTacToePanel[] panels;
+
+    protected boolean DisplayGameResult;
+    protected iEngine ie;
+    protected TicTacToePanel[] panels;
+    protected JMenuItem newAction;
 
     public GUI(iEngine ie)
     {
+        DisplayGameResult = true;
+
         this.ie = ie;
 
         final GridLayout layout = new GridLayout(3,3);
@@ -32,7 +36,7 @@ public class GUI extends JFrame
         JMenu fileMenu = new JMenu("File");
         fileMenu.setMnemonic('f');
 
-        JMenuItem newAction = new JMenuItem("New Game");
+        newAction = new JMenuItem("New Game");
         newAction.setMnemonic('n');
 
         JMenuItem quitAction = new JMenuItem("Quit");
@@ -91,15 +95,21 @@ public class GUI extends JFrame
                 return;
             case 1:
                 this.setTitle("TicTacToe! - Player 1 won!" );
-                JOptionPane.showMessageDialog(this,"Player 1 won!");
+                if (DisplayGameResult){
+                    JOptionPane.showMessageDialog(this,"Player 1 won!");
+                }
                 break;
             case 2:
                 this.setTitle("TicTacToe! - Player 2 won!" );
-                JOptionPane.showMessageDialog(this,"Player 2 won!");
+                if (DisplayGameResult){
+                    JOptionPane.showMessageDialog(this,"Player 2 won!");
+                }
                 break;
             case 3:
                 this.setTitle("TicTacToe! - Game ended with a draw!" );
-                JOptionPane.showMessageDialog(this,"This game ended with a draw!");
+                if (DisplayGameResult){
+                    JOptionPane.showMessageDialog(this,"This game ended with a draw!");
+                }
                 break;
         }
 
@@ -125,5 +135,4 @@ public class GUI extends JFrame
             this.dispose();
         }
     }
-
 }
