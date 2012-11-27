@@ -30,7 +30,9 @@ public class GameEngine implements iEngine {
     	}
     	else
     	{
-    		return false;
+            //A ad skila false, er nuna a true til ad tekka hvort unit test finni
+            return true;
+    		//return false;
     	}
     }
     public byte Get (Point point)
