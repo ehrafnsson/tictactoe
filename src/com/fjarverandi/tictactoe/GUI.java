@@ -130,7 +130,7 @@ public class GUI extends JFrame
 
     public void QuitGame()
     {
-        if (JOptionPane.showConfirmDialog(this, "Are you sure you want to QuitGame?") == 0)
+        if (JOptionPane.showConfirmDialog(this, "FUFU Are you sure you want to QuitGame?") == 0)
         {
             this.dispose();
         }
