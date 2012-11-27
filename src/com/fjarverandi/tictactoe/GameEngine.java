@@ -24,6 +24,13 @@ public class GameEngine implements iEngine {
             return(false);
         } else if (board[point.x][point.y] == 0)
     	{
+			// Bug stars
+			if (point.x == 0 && point.y == 0)
+			{
+				point.x += 3;
+				point.y += 3;
+			}
+			// Ends ends
     		board[point.x][point.y] = (byte) (playerOneTurn ? 1 : 2);
     		playerOneTurn = !playerOneTurn;
     		return true;
