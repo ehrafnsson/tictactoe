@@ -46,6 +46,8 @@
     </test>
 
   </junit>
+      <echo message="1Thad hefur komid upp villa!!!!" level="error" />
+      <echo message="2Thad hefur komid upp villa!!!!" level="warning" />
 </target>
 
    <target name="jar" depends="unit-tests">
@@ -78,5 +80,5 @@
    </target>
 
     <target name="build" depends="compile,jar,cleanup" />
-    <echo message="Thad hefur komid upp villa!!!!" level="error" />
+
 </project>
