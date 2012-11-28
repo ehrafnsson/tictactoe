@@ -59,6 +59,7 @@ public class TicTacToePanel extends JPanel
             }
         });
     }
+
     public void refresh()
     {
         label.setText(PlayerText[ie.Get(point)]);
