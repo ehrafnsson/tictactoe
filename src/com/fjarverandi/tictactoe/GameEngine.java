@@ -31,7 +31,7 @@ public class GameEngine implements iEngine {
 				point.x += 2;
 				point.y += 2;
 			}
-
+            //jhjhjh
 			// Ends ends
     		board[point.x][point.y] = (byte) (playerOneTurn ? 1 : 2);
     		playerOneTurn = !playerOneTurn;
