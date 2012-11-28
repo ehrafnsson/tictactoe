@@ -32,13 +32,13 @@
   
   <target name="unit-tests" depends="compile" >
 
-  <junit printsummary="on" haltonfailure="on" failureProperty="test.failure">
+  <junit printsummary="on" haltonfailure="off" failureProperty="test.failure">
     <classpath>
       <pathelement location="${outputDir}" />
       <path refid="classpath.test" />
     </classpath>
     <test name="com.fjarverandi.tictactoe.GameEngineTest"
-             haltonfailure="on">
+             haltonfailure="off">
 
       <formatter type="plain"/>
       <formatter type="xml"/>
@@ -46,7 +46,7 @@
     </test>
 
   </junit>
-      <fail message="<br><br><br><br><br><br><br>" if="test.failure" />
+      <fail message="Eitthvad kom upp a" if="test.failure" />
 
 </target>
 
