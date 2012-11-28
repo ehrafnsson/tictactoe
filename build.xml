@@ -32,7 +32,7 @@
   
   <target name="unit-tests" depends="compile" >
 
-  <junit printsummary="on" haltonfailure="on">
+  <junit printsummary="on" haltonfailure="on" failureProperty="test.failure">
     <classpath>
       <pathelement location="${outputDir}" />
       <path refid="classpath.test" />
@@ -46,8 +46,8 @@
     </test>
 
   </junit>
-      <echo message="1Thad hefur komid upp villa!!!!" level="error" />
-      <echo message="2Thad hefur komid upp villa!!!!" level="warning" />
+      <fail message="<br><br><br><br><br><br><br>" if="test.failure" />
+
 </target>
 
    <target name="jar" depends="unit-tests">
