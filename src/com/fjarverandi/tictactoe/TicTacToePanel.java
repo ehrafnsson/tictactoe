@@ -58,8 +58,6 @@ public class TicTacToePanel extends JPanel
             public void mouseExited(MouseEvent e) {
             }
         });
-
-
     }
     public void refresh()
     {
